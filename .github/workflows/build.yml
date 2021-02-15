@@ -16,6 +16,10 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: master
@@ -31,6 +35,10 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         link: [static, shared]
     steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: master
