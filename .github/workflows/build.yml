@@ -25,6 +25,7 @@ jobs:
           version: master
       - uses: mattnite/setup-gyro@v1.0.0
       - uses: actions/checkout@v2
+      - run: sudo apt install libsdl2-dev
       - run: gyro build -Dlink=system
 
   local:
