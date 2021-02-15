@@ -11,7 +11,6 @@ on:
 jobs:
   system:
     name: Link to system SDL
-    needs: setup
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -25,7 +24,6 @@ jobs:
 
   local:
     name: Link to locally built SDL
-    needs: setup
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
