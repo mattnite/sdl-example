@@ -26,10 +26,10 @@ jobs:
       - uses: mattnite/setup-gyro@v1.0.0
       - uses: actions/checkout@v2
 
-      - if: ${{ matrix.os == ubuntu-latest }}
+      - if: ${{ matrix.os == 'ubuntu-latest' }}
         run: sudo apt install libsdl2-dev
 
-      - if: ${{ matrix.os == macos-latest }}
+      - if: ${{ matrix.os == 'macos-latest' }}
         run: sudo brew install sdl
 
       - run: gyro build -Dlink=system
