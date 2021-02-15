@@ -20,6 +20,7 @@ jobs:
         with:
           version: master
       - uses: mattnite/setup-gyro@v1.0.0
+      - uses: actions/checkout@v2
       - run: gyro build -Dlink=system
 
   local:
@@ -34,4 +35,5 @@ jobs:
         with:
           version: master
       - uses: mattnite/setup-gyro@v1.0.0
+      - uses: actions/checkout@v2
       - run: gyro build -Dlink=${{ matrix.link }}
