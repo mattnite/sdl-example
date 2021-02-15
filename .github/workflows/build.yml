@@ -9,17 +9,6 @@ on:
       - main
 
 jobs:
-  setup:
-    name: Install zig and gyro
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    steps:
-      - uses: goto-bus-stop/setup-zig@v1
-        with:
-          version: master
-      - uses: mattnite/setup-gyro@v1.0.0
   system:
     name: Link to system SDL
     needs: setup
@@ -28,6 +17,10 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
+      - uses: goto-bus-stop/setup-zig@v1
+        with:
+          version: master
+      - uses: mattnite/setup-gyro@v1.0.0
       - run: gyro build -Dlink=system
 
   local:
@@ -39,4 +32,8 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         link: [static, shared]
     steps:
+      - uses: goto-bus-stop/setup-zig@v1
+        with:
+          version: master
+      - uses: mattnite/setup-gyro@v1.0.0
       - run: gyro build -Dlink=${{ matrix.link }}
