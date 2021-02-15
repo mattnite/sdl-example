@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+  schedule: '0 23 * * *'
 
 jobs:
   system:
@@ -30,7 +31,7 @@ jobs:
         run: sudo apt install libsdl2-dev
 
       - if: ${{ matrix.os == 'macos-latest' }}
-        run: sudo brew install sdl
+        run: brew install sdl
 
       - run: gyro build -Dlink=system
 
