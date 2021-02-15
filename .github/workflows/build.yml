@@ -1,7 +1,12 @@
 name: Build
 
-# Run this workflow every time a new commit pushed to your repository
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   setup:
@@ -14,7 +19,7 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: master
-      - uses: mattnite/setup-gyro@v1
+      - uses: mattnite/setup-gyro@v1.0.0
   system:
     name: Link to system SDL
     needs: setup
