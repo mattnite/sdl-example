@@ -1,9 +1,0 @@
-pkg default xq SDL 0.0.0
-github mattnite SdlBuilder main src/main.zig 872cf2ff7074973fe3e3c341ac3e320bfb7f99d3
-pkg default build-tools download 1.0.0
-pkg default gyro tar 0.0.1
-pkg default gyro zfetch 0.0.1
-pkg default gyro uri 0.0.0
-pkg default gyro hzzp 0.0.0
-pkg default gyro network 0.0.1
-pkg default gyro iguanaTLS 0.0.1
