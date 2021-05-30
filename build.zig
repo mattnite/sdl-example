@@ -15,6 +15,7 @@ pub fn build(b: *Builder) !void {
     const exe = b.addExecutable("sdl-example", "src/main.zig");
     exe.setBuildMode(mode);
     exe.addPackage(pkgs.SDL);
+    exe.linkLibC();
     sdl.link(exe);
     exe.install();
 
