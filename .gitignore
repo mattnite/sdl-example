@@ -2,3 +2,5 @@ build_runner.zig
 zig-cache
 .gyro
 deps.zig
+gyro.lock
+zig-out

@@ -25,7 +25,7 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: master
-      - uses: mattnite/setup-gyro@v1.0.0
+      - uses: mattnite/setup-gyro@v1
       - uses: actions/checkout@v2
 
       - if: ${{ matrix.os == 'ubuntu-latest' }}
@@ -51,7 +51,7 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: master
-      - uses: mattnite/setup-gyro@v1.0.0
+      - uses: mattnite/setup-gyro@v1
       - uses: actions/checkout@v2
       - uses: lukka/get-cmake@latest 
       - run: gyro build -Dlink=${{ matrix.link }}

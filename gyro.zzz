@@ -1,5 +1,11 @@
 deps:
-  xq/SDL: ^0.0.0
+  SDL:
+    src:
+      github:
+        user: MasterQ32
+        repo: SDL.zig
+        ref: master
+    root: src/lib.zig
 build_deps:
   SdlBuilder:
     src:
