@@ -2,7 +2,7 @@ const std = @import("std");
 const Builder = @import("std").build.Builder;
 const download = @import("download");
 const SdlBuilder = @import("SdlBuilder");
-const pkgs = @import("gyro").pkgs;
+const pkgs = @import("deps.zig").pkgs;
 
 pub fn build(b: *Builder) !void {
     const mode = b.standardReleaseOptions();
@@ -15,6 +15,7 @@ pub fn build(b: *Builder) !void {
     const exe = b.addExecutable("sdl-example", "src/main.zig");
     exe.setBuildMode(mode);
     exe.addPackage(pkgs.SDL);
+    exe.linkLibC();
     sdl.link(exe);
     exe.install();
 
